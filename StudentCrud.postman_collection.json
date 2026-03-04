@@ -1,0 +1,87 @@
+{
+	"info": {
+		"name": "Student CRUD API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080/api/students"
+		}
+	],
+	"item": [
+		{
+			"name": "Create Student",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Jaeden Rotondo\",\n    \"fees\": 1500.00,\n    \"subName\": \"Computer Science\"\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}",
+					"host": ["{{baseUrl}}"]
+				}
+			}
+		},
+		{
+			"name": "Get All Students",
+			"request": {
+				"method": "GET",
+				"url": {
+					"raw": "{{baseUrl}}",
+					"host": ["{{baseUrl}}"]
+				}
+			}
+		},
+		{
+			"name": "Get Student By ID",
+			"request": {
+				"method": "GET",
+				"url": {
+					"raw": "{{baseUrl}}/1",
+					"host": ["{{baseUrl}}"],
+					"path": ["1"]
+				}
+			}
+		},
+		{
+			"name": "Update Student",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Jaeden Updated\",\n    \"fees\": 2000.00,\n    \"subName\": \"Software Engineering\"\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/1",
+					"host": ["{{baseUrl}}"],
+					"path": ["1"]
+				}
+			}
+		},
+		{
+			"name": "Delete Student By ID",
+			"request": {
+				"method": "DELETE",
+				"url": {
+					"raw": "{{baseUrl}}/1",
+					"host": ["{{baseUrl}}"],
+					"path": ["1"]
+				}
+			}
+		}
+	]
+}
